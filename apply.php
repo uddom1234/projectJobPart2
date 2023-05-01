@@ -34,7 +34,7 @@
                 APPLY NOW
             </a>
         </div>
-    </nav>  
+    </nav> 
 
     <section class= "formCard" >
         <form method="post" action="processEOI.php">
@@ -42,15 +42,15 @@
                 <legend></legend>
                 <p>
              <h3 class="applyH3"><label for="jobReferenceNumber">Job Reference</label></h3>   
-            
+           
                 <input type="text" id="reference" name="jobReferenceNumber" pattern="[A-Za-z0-9]{5}" placeholder="Enter reference ID" required="required"/>
                 </P><hr/>
             <div class="personalDet">
                 <div>
                 <fieldset class="personalContainer">
                 <h3 class="applyH3">Personal Details</h3>
-                  
-                     <p>  
+                 
+                     <p> 
                     <label  class="applyInput"><input type="text" name="firstName" maxlength="20" pattern="[A-Za-z]{1-20}" placeholder="Please enter your first name" required="required"/> First name&nbsp;&nbsp;&nbsp;</label>
                     <label class="applyInput"><input type="text" name="lastName" maxlength="20"pattern="[A-Za-z]{1-20}"placeholder="Please enter your last name" required="required"/> Last name</label>
                     </p>
@@ -58,8 +58,8 @@
                 <p class="dob">
                     <label class="applyInput"><input type="date" name="dateOfBirth" required="required"/> Date of Birth</label>
                 </p><hr/>
-                
-                
+               
+               
                 </fieldset><hr/>
                 </div>
                 <div>
@@ -76,7 +76,7 @@
             </div>
                 <fieldset class="applyAddress">
                 <h3 class="applyH3">Address</h3>
-        
+       
                     <p>
                         <label id="stateAddress" class="applyInput">
                             <input name= 'streetAddress' type="text" maxlength="40" pattern="[A-za-z0-9]{1-40}" placeholder="Enter your street address" required="required"/>Street Address&nbsp;&nbsp;&nbsp;&nbsp;
@@ -98,7 +98,7 @@
                         </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;<label class="applyInput"><input type="text" name="postcode" placeholder="Enter your postcode" pattern="[0-9]{4}" required="required"/>Postcode</label>
                     </p>
-                    
+                   
                 </fieldset><hr/>
                 <fieldset class="contactInfo">
                  <h3 class="applyH3">Contact Information</h3>
@@ -132,7 +132,7 @@
                     </div>
                     </p>
                     </div>
-            </fieldset>        
+            </fieldset>       
         </form>
     </section>
     <?php

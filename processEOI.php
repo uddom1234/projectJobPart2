@@ -45,6 +45,66 @@ if (mysqli_query($conn, $sql_create_table) === FALSE) {
 
 //need to add validation
 $error = [];
+if (isset($_POST["Job Reference"])){
+    $Jobref=$_POST["Job Reference"];
+}
+else{
+    echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
+}
+if (isset($_POST["firstname"])){
+    $firstname=$_POST["firstname"];
+}
+else{
+    echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
+}
+if (isset($_POST["lastname"])){
+    $lastname=$_POST["lastname"];
+}
+else{
+    echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
+}
+if (isset($_POST["dateofBirth"])){
+    $fname=$_POST["dateofBirth"];
+}
+else{
+    echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
+}
+if (isset($_POST["streetAddress"])){
+    $streetAddress=$_POST["streetAddress"];
+}
+else{
+    echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
+}
+if (isset($_POST["suburbTown"])){
+    $suburbTown=$_POST["suburbTown"];
+}
+else{
+    echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
+}
+if (isset($_POST["postcode"])){
+    $postcode=$_POST["postcode"];
+}
+else{
+    echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
+}
+if (isset($_POST["emailAddress"])){
+    $emailAddress=$_POST["emailAddress"];
+}
+else{
+    echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
+}
+if (isset($_POST["phoneNumber"])){
+    $phoneNumber=$_POST["phoneNumber"];
+}
+else{
+    echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
+}
+if (isset($_POST["otherSkills"])){
+    $otherSkills=$_POST["otherSkills"];
+}
+else{
+    echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
+}
 
 // Insert the record into the eoi table
 $sql_insert = "INSERT INTO eoi (JobReferenceNumber, FirstName, LastName, DateOfBirth, Gender, StreetAddress, SuburbTown, State, Postcode, EmailAddress, PhoneNumber, Skills, OtherSkills, Status)
