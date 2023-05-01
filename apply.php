@@ -43,7 +43,7 @@
                 <p>
              <h3 class="applyH3"><label for="jobReferenceNumber">Job Reference</label></h3>   
             
-                <input type="text" id="reference" name="Job Reference" pattern="[A-Za-z0-9]{5}" placeholder="Enter reference ID" required="required"/>
+                <input type="text" id="reference" name="jobReferenceNumber" pattern="[A-Za-z0-9]{5}" placeholder="Enter reference ID" required="required"/>
                 </P><hr/>
             <div class="personalDet">
                 <div>
