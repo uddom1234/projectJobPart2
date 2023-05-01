@@ -1,5 +1,12 @@
 <?php
 // manage.php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
+    header('Location: login.php');
+    exit;
+}
 
 // Include the settings file
 require_once 'settings.php';
@@ -55,15 +62,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif ($action == 'deleteByJobRef') {
         $jobReferenceNumber = $_POST['jobReferenceNumber'];
         $query = "DELETE FROM eoi WHERE JobReferenceNumber = '$jobReferenceNumber'";
-        mysqli_query($conn, $query);
-        echo "EOIs with Job Reference Number '$jobReferenceNumber' deleted successfully.";
+        ;
+        if(mysqli_query($conn, $query)) {
+            echo "EOIs with Job Reference Number '$jobReferenceNumber' deleted successfully.";
+        } else {
+            echo "Error deleting EOIs with Job Reference Number '$jobReferenceNumber'.";
+        }
         
     } elseif ($action == 'changeStatus') {
         $EOInumber = $_POST['EOInumber'];
         $newStatus = $_POST['newStatus'];
         $query = "UPDATE eoi SET Status = '$newStatus' WHERE EOInumber = '$EOInumber'";
-        mysqli_query($conn, $query);
-        echo "Status updated successfully for EOI number '$EOInumber'.";
+        if(mysqli_query($conn, $query)) {
+            echo "Status updated successfully for EOI number '$EOInumber'.";
+        } else {
+            echo "Error updating EOI with number '$EOInumber'.";
+        }
     }
 }
 ?>
@@ -119,5 +133,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </select>
         <input type="submit" value="Change EOI Status">
     </form>
+    <form action="logout.php" method="post" style="display: inline;">
+        <input type="submit" value="Logout">
+    </form>
+
 </body>
 </html>
