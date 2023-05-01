@@ -112,10 +112,10 @@
                 <fieldset class="skills">
                 <h3 class="applyH3">Skills</h3>
                     <p>
-                        <label id="checkInput" class="applyInput"><input type="checkbox" name="skills[]" value="Bachelor in IT" required="required" checked/>Bachelor Degree in IT Field</label><hr/>
-                        <label id="checkInput"  class="applyInput"><input type="checkbox" name="skills[]" value="Familar with networking protocols"/>Familiar with networking protocols</label><hr/>
-                        <label id="checkInput"  class="applyInput"><input type="checkbox" name="skills[]" value="Certification in IT or programming"/> Certification in IT or programming</label><hr/>
-                        <label id="checkInput"  class="applyInput"><input type="checkbox" name="skills[]" value="Fluency in English"/> Fluency in English</label><hr/>
+                        <label id="checkInput" class="applyInput"><input type="checkbox" name="Bachelor" value="Bachelor in IT" required="required" checked/>Bachelor Degree in IT Field</label><hr/>
+                        <label id="checkInput"  class="applyInput"><input type="checkbox" name="Network" value="Familar with networking protocols"/>Familiar with networking protocols</label><hr/>
+                        <label id="checkInput"  class="applyInput"><input type="checkbox" name="IT" value="Certification in IT or programming"/> Certification in IT or programming</label><hr/>
+                        <label id="checkInput"  class="applyInput"><input type="checkbox" name="English" value="Fluency in English"/> Fluency in English</label><hr/>
                     </p>
                     <p>
                         <label class="applyInput">Other Skills</label>

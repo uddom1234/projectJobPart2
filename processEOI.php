@@ -44,9 +44,9 @@ if (mysqli_query($conn, $sql_create_table) === FALSE) {
 
 
 //need to add validation
-$error = [];
-if (isset($_POST["Job Reference"])){
-    $Jobref=$_POST["Job Reference"];
+$error = 0;
+if (isset($_POST["jobReferenceNumber"])){
+    $jobReferenceNumber=$_POST["jobReferenceNumber"];
 }
 else{
     echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
@@ -105,8 +105,28 @@ if (isset($_POST["otherSkills"])){
 else{
     echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
 }
+if (isset ($_POST["gender"])){
+    $gender=$_POST["gender"];
+}
+else{
+    echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
+}
+if (isset ($_POST["state"])){
+    $state=$_POST["state"];
+}
+else{
+    echo "<p> Enter data in the <a href=\"apply.php\">form</a></p>";
+}
+$skills='';
+if (isset($_POST["Bachelor"])) $skills=$skills."Bachelor in IT";
+if (isset($_POST["Network"])) $skills=$skills."Familiar with networking protocol";
+if (isset($_POST["IT"])) $skills=$skills."Certification in IT or programming";
+if (isset($_POST["English"])) $skills=$skills."Fluency in English";
+
+
 
 // Insert the record into the eoi table
+
 $sql_insert = "INSERT INTO eoi (JobReferenceNumber, FirstName, LastName, DateOfBirth, Gender, StreetAddress, SuburbTown, State, Postcode, EmailAddress, PhoneNumber, Skills, OtherSkills, Status)
     VALUES ('$jobReferenceNumber', '$firstName', '$lastName', '$dateOfBirth', '$gender', '$streetAddress', '$suburbTown', '$state', '$postcode', '$emailAddress', '$phoneNumber', '$skills', '$otherSkills', 'New')";
 
