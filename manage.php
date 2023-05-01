@@ -5,14 +5,30 @@
 require_once 'settings.php';
 
 // Function to display query results
-function displayResults($result) {
+function display($result) {
     echo "<table border='1'>";
-    echo "<tr><th>EOInumber</th><th>JobReferenceNumber</th><th>FirstName</th><th>LastName</th><th>DateOfBirth</th><th>Gender</th><th>StreetAddress</th><th>SuburbTown</th><th>State</th><th>Postcode</th><th>EmailAddress</th><th>PhoneNumber</th><th>Skills</th><th>OtherSkills</th><th>Status</th></tr>";
+    echo "<tr>
+            <th>EOInumber</th>
+            <th>JobReferenceNumber</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>DateOfBirth</th>
+            <th>Gender</th>
+            <th>StreetAddress</th>
+            <th>SuburbTown</th>
+            <th>State</th>
+            <th>Postcode</th>
+            <th>EmailAddress</th>
+            <th>PhoneNumber</th>
+            <th>Skills</th>
+            <th>OtherSkills</th>
+            <th>Status</th>
+        </tr>";
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        foreach ($row as $key => $value) {
+        foreach ($row as $value) {
             echo "<td>" . $value . "</td>";
-        }
+        }       
         echo "</tr>";
     }
     echo "</table>";
@@ -21,45 +37,33 @@ function displayResults($result) {
 // Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $action = $_POST['action'];
-
-    switch ($action) {
-        case 'listAll':
-            $sql = "SELECT * FROM eoi";
-            $result = mysqli_query($conn, $sql);
-            displayResults($result);
-            break;
-        case 'listByJobRef':
-            $jobReferenceNumber = $_POST['jobReferenceNumber'];
-            $sql = "SELECT * FROM eoi WHERE JobReferenceNumber = '$jobReferenceNumber'";
-            $result = mysqli_query($conn, $sql);
-            displayResults($result);
-            break;
-        case 'listByApplicant':
-            $firstName = $_POST['firstName'];
-            $lastName = $_POST['lastName'];
-            $sql = "SELECT * FROM eoi WHERE FirstName LIKE '%$firstName%' AND LastName LIKE '%$lastName%'";
-            $result = mysqli_query($conn, $sql);
-            displayResults($result);
-            break;
-        case 'deleteByJobRef':
-            $jobReferenceNumber = $_POST['jobReferenceNumber'];
-            $sql = "DELETE FROM eoi WHERE JobReferenceNumber = '$jobReferenceNumber'";
-            if (mysqli_query($conn, $sql)) {
-                echo "EOIs with Job Reference Number '$jobReferenceNumber' deleted successfully.";
-            } else {
-                echo "Error: " . mysqli_error($conn);
-            }
-            break;
-        case 'changeStatus':
-            $EOInumber = $_POST['EOInumber'];
-            $newStatus = $_POST['newStatus'];
-            $sql = "UPDATE eoi SET Status = '$newStatus' WHERE EOInumber = '$EOInumber'";
-            if (mysqli_query($conn, $sql)) {
-                echo "Status updated successfully for EOI number '$EOInumber'.";
-            } else {
-                echo "Error: " . mysqli_error($conn);
-            }
-            break;
+    if($action == 'listAll'){
+        $query = "SELECT * FROM eoi";
+        $result = mysqli_query($conn, $query);
+        display($result);
+    } elseif ($action == 'listByJobRef') {
+        $jobReferenceNumber = $_POST['jobReferenceNumber'];
+        $query = "SELECT * FROM eoi WHERE JobReferenceNumber = '$jobReferenceNumber'";
+        $result = mysqli_query($conn, $query);
+        display($result);
+    } elseif ($action == 'listByApplicant') {
+        $firstName = $_POST['firstName'];
+        $lastName = $_POST['lastName'];
+        $sql = "SELECT * FROM eoi WHERE FirstName LIKE '%$firstName%' AND LastName LIKE '%$lastName%'";
+        $result = mysqli_query($conn, $sql);
+        display($result);
+    } elseif ($action == 'deleteByJobRef') {
+        $jobReferenceNumber = $_POST['jobReferenceNumber'];
+        $query = "DELETE FROM eoi WHERE JobReferenceNumber = '$jobReferenceNumber'";
+        mysqli_query($conn, $query);
+        echo "EOIs with Job Reference Number '$jobReferenceNumber' deleted successfully.";
+        
+    } elseif ($action == 'changeStatus') {
+        $EOInumber = $_POST['EOInumber'];
+        $newStatus = $_POST['newStatus'];
+        $query = "UPDATE eoi SET Status = '$newStatus' WHERE EOInumber = '$EOInumber'";
+        mysqli_query($conn, $query);
+        echo "Status updated successfully for EOI number '$EOInumber'.";
     }
 }
 ?>
@@ -71,6 +75,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <h1>EOI Management</h1>
+    <form action="manage.php" method="post">
+        <input type="hidden" name="action" value="listAll">
+        <input type="submit" value="List all EOIs">
+    </form>
+    <br>
 
     <form action="manage.php" method="post">
         <input type="hidden" name="action" value="listByJobRef">
