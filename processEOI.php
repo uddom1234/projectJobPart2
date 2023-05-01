@@ -46,18 +46,16 @@ if (mysqli_query($conn, $sql_create_table) === FALSE) {
 //need to add validation
 $error = [];
 
-if (empty($erorr)) {
-    // Insert the record into the eoi table
-    $sql_insert = "INSERT INTO eoi (JobReferenceNumber, FirstName, LastName, DateOfBirth, Gender, StreetAddress, SuburbTown, State, Postcode, EmailAddress, Skills, PhoneNumber, OtherSkills)
-    VALUES ('$job_reference_number', '$first_name', '$last_name', '$date_of_birth', '$gender', '$street_address', '$suburb_town', '$state', '$postcode', '$email_address', '$phone_number', '$other_skills')";
-} 
-
+// Insert the record into the eoi table
+$sql_insert = "INSERT INTO eoi (JobReferenceNumber, FirstName, LastName, DateOfBirth, Gender, StreetAddress, SuburbTown, State, Postcode, EmailAddress, PhoneNumber, Skills, OtherSkills, Status)
+    VALUES ('$jobReferenceNumber', '$firstName', '$lastName', '$dateOfBirth', '$gender', '$streetAddress', '$suburbTown', '$state', '$postcode', '$emailAddress', '$phoneNumber', '$skills', '$otherSkills', 'New')";
 
 if (mysqli_query($conn, $sql_insert)) {
     echo "EOI record created successfully.";
 } else {
-    echo "Submission Failed!";
+    echo "Submission Failed: " . mysqli_error($conn);
 }
+
 
 // Close the connection
 mysqli_close($conn);
