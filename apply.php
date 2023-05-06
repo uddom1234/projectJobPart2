@@ -37,7 +37,7 @@
     </nav> 
 
     <section class= "formCard" >
-        <form method="post" action="processEOI.php">
+        <form method="post" action="processEOI.php" novalidate=”novalidate”>
             <fieldset class="mainForm">
                 <legend></legend>
                 <p>
