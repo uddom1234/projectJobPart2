@@ -53,8 +53,8 @@ else{
     echo "<p> Enter last name in the <a href=\"apply.php\">form</a></p>";
 }
 
-if (isset($_POST["dateofBirth"])){
-    $dateOfBirth=$_POST["dateofBirth"];
+if (isset($_POST["dateOfBirth"])){
+    $dateOfBirth=$_POST["dateOfBirth"];
 }
 
 else{
