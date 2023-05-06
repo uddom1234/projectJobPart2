@@ -30,7 +30,9 @@ if (mysqli_query($conn, $sql_create_table) === FALSE) {
 
 
 //need to add validation
-
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+date_default_timezone_set("Australia/Melbourne");
+echo "<p> Submitted on " . date("d-m-y"). " at " .date("h:i:sa"). ".</p>";
 if (isset($_POST["jobReferenceNumber"])){
     $jobReferenceNumber=$_POST["jobReferenceNumber"];
 }
@@ -199,7 +201,7 @@ function sanitise_input ($data){
 
 // Insert the record into the eoi table
 
-if($error == 0) {
+if($error == '') {
     $sql_insert = "INSERT INTO eoi (JobReferenceNumber, FirstName, LastName, DateOfBirth, Gender, StreetAddress, SuburbTown, State, Postcode, EmailAddress, PhoneNumber, Skills, OtherSkills, Status)
     VALUES ('$jobReferenceNumber', '$firstName', '$lastName', '$dateOfBirth', '$gender', '$streetAddress', '$suburbTown', '$state', '$postcode', '$emailAddress', '$phoneNumber', '$skills', '$otherSkills', 'New')";
 } else {
@@ -211,7 +213,7 @@ if (mysqli_query($conn, $sql_insert)) {
 } else {
     echo "Submission Failed: " . mysqli_error($conn);
 }
-
+}
 
 // Close the connection
 mysqli_close($conn);
