@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php 
-        require 'header.php' ;
+        require 'header.inc' ;
     ?>
 <section id="aboutUsSection">
     <h1>About Us</h1>
