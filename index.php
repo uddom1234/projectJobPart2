@@ -9,33 +9,9 @@
     <link rel="icon" type="image/x-icon" href="/images/logo.png">
 </head>
 <body>
-    <div class="mainCardPreview">
-    <nav>
-        <div class="leftNav navBlock">
-            <a href="./index.html">
-                <image src="./images/logo-black.png" id="logo"></image>
-            </a>
-            <ul class="navHead">
-                <li>
-                    <a href="./jobs.html">Job</a>
-                </li>
-                <li>
-                    <a href="./apply.php">Apply</a>
-                </li>
-                <li>
-                    <a href="./about.html">About</a>
-                </li>
-                <li>
-                    <a href="./enhancement.html">Enhancement</a>
-                </li>
-            </ul>
-            </div>
-        <div class="rightNav navBlock">
-            <a href="./apply.php" class="fakeBtn">
-                APPLY NOW
-            </a>
-        </div>
-    </nav>
+<?php 
+        require 'header.php' ;
+    ?>
     <div class="mainCardBody">
         <div class="mainCardSplit">
             <div id="mainSplitText">
