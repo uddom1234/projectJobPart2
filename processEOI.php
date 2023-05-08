@@ -170,9 +170,16 @@ if($state==''){
 if($skills==''){
     $error.="<p> Please select your skill in the <a href=\"apply.php\">form</a>.</p>";
 }
+$today= new DateTime();
+$diff = $today->diff(new DateTime($dateOfBirth));
+$age = $diff->y;
+if ($age<18){
+    $error.= "<p> Age requirement does not match</p>";
+}
 if ($error !=""){
     echo "<p> $error </p>";
 } 
+
 
 function sanitise_input ($data){
     $data=trim($data);
@@ -204,16 +211,17 @@ function sanitise_input ($data){
 if($error == '') {
     $sql_insert = "INSERT INTO eoi (JobReferenceNumber, FirstName, LastName, DateOfBirth, Gender, StreetAddress, SuburbTown, State, Postcode, EmailAddress, PhoneNumber, Skills, OtherSkills, Status)
     VALUES ('$jobReferenceNumber', '$firstName', '$lastName', '$dateOfBirth', '$gender', '$streetAddress', '$suburbTown', '$state', '$postcode', '$emailAddress', '$phoneNumber', '$skills', '$otherSkills', 'New')";
+    if (mysqli_query($conn, $sql_insert)) {
+        echo "EOI record created successfully.";
+    } else {
+        echo "Submission Failed: " . mysqli_error($conn);
+    }
+    }
 } else {
     echo "There's an error!";
 }
 
-if (mysqli_query($conn, $sql_insert)) {
-    echo "EOI record created successfully.";
-} else {
-    echo "Submission Failed: " . mysqli_error($conn);
-}
-}
+
 
 // Close the connection
 mysqli_close($conn);

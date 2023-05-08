@@ -56,22 +56,24 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="manage.css">
+
 </head>
 <body>
-    <h1>Login</h1>
+    <h1 class="title">Login</h1>
 
     <?php if (isset($errorMessage)): ?>
-        <p style="color: red;"><?php echo $errorMessage; ?></p>
+        <p class="errorMessage"><?php echo $errorMessage; ?></p>
     <?php endif; ?>
 
-    <form action="login.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
+    <form class="loginForm" action="login.php" method="post">
+        <label for="username" class="label">Username:</label>
+        <input type="text" name="username" id="username" class="input" required>
         <br><br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
+        <label for="password" class="label">Password:</label>
+        <input type="password" name="password" id="password" class="input" required>
         <br><br>
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" class="button">
     </form>
 </body>
 </html>

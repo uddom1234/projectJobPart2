@@ -1,43 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ye</title>
-	<link href="style.css" rel="stylesheet"  media="screen"/>
     <title>Jobs</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <link href="style.css" rel="stylesheet"  media="screen"/>
 </head>
 <body>
-    <div class="mainCardPreview">
-    <nav>
-        <div class="leftNav navBlock">
-			<a href="./index.html">
-            <a href="./index.html">
-                <image src="./images/logo-black.png" id="logo"></image>
-            </a>
-            <ul class="navHead">
-                <li>
-                    <a href="./jobs.php">Job</a>
-                </li>
-                <li>
-                    <a href="./apply.php">Apply</a>
-                </li>
-                <li>
-                    <a href="./about.php">About</a>
-                </li>
-                <li>
-                    <a href="./enhancement.php">Enhancement</a>
-                </li>
-            </ul>
-            </div>
-        <div class="rightNav navBlock">
-            <a href="./apply.php" class="fakeBtn">
-                APPLY NOW
-            </a>
-        </div>
+	<?php 
+        require 'header.inc' ;
+    ?>
     </nav>
 	</div>
 	<div class="orientation_1">	
