@@ -34,33 +34,32 @@
                 APPLY NOW
             </a>
         </div>
-    </nav>  
+    </nav> 
 
     <section class= "formCard" >
-        <form method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
+        <form method="post" action="processEOI.php" novalidate=”novalidate”>
             <fieldset class="mainForm">
                 <legend></legend>
                 <p>
-             <h3 class="applyH3"><label for="reference">Job Reference</label></h3>   
-            
-                <input type="text" id="reference" name="Job Reference" pattern="[A-Za-z0-9]{5}" placeholder="Enter reference ID" required="required"/>
+             <h3 class="applyH3"><label for="jobReferenceNumber">Job Reference</label></h3>   
+           
+                <input type="text" id="reference" name="jobReferenceNumber" pattern="[A-Za-z0-9]{5}" placeholder="Enter reference ID" required="required"/>
                 </P><hr/>
             <div class="personalDet">
                 <div>
                 <fieldset class="personalContainer">
                 <h3 class="applyH3">Personal Details</h3>
-                  
-                     <p>  
-                    <label  class="applyInput"><input type="text" name="First Name" maxlength="20" pattern="[A-Za-z]{1-20}" placeholder="Please enter your first name" required="required"/> First name&nbsp;&nbsp;&nbsp;</label>
-                    <label class="applyInput"><input type="text" name="Last Name" maxlength="20"pattern="[A-Za-z]{1-20}"placeholder="Please enter your last name" required="required"/> Last name</label>
+                 
+                     <p> 
+                    <label  class="applyInput"><input type="text" name="firstName" maxlength="20" pattern="[A-Za-z]{1-20}" placeholder="Please enter your first name" required="required"/> First name&nbsp;&nbsp;&nbsp;</label>
+                    <label class="applyInput"><input type="text" name="lastName" maxlength="20"pattern="[A-Za-z]{1-20}"placeholder="Please enter your last name" required="required"/> Last name</label>
                     </p>
                  
-                 
                 <p class="dob">
-                    <label class="applyInput"><input type="date" name="Date of Birth" required="required"/> Date of Birth</label>
+                    <label class="applyInput"><input type="date" name="dateOfBirth" required="required"/> Date of Birth</label>
                 </p><hr/>
-                
-                
+               
+               
                 </fieldset><hr/>
                 </div>
                 <div>
@@ -77,13 +76,17 @@
             </div>
                 <fieldset class="applyAddress">
                 <h3 class="applyH3">Address</h3>
-        
+       
                     <p>
-                        <label id="stateAddress" class="applyInput"><input type="text" maxlength="40" pattern="[A-za-z0-9]{1-40}" placeholder="Enter your street address" required="required"/>Street Address&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <label class="applyInput"><input type="text" maxlength="40" placeholder="Enter your suburb" pattern="[A-za-z0-9]{1-40}"/>Suburb/Town&nbsp;&nbsp;&nbsp;&nbsp;</label><hr/>
+                        <label id="stateAddress" class="applyInput">
+                            <input name= 'streetAddress' type="text" maxlength="40" pattern="[A-za-z0-9]{1-40}" placeholder="Enter your street address" required="required"/>Street Address&nbsp;&nbsp;&nbsp;&nbsp;
+                        </label>
+                        <label class="applyInput">
+                            <input type="text" maxlength="40" name='suburbTown' placeholder="Enter your suburb" pattern="[A-za-z0-9]{1-40}"/>Suburb/Town&nbsp;&nbsp;&nbsp;&nbsp;
+                        </label><hr/>
                         <label class="applyInput">State</label>
                                    
-                        <select name="State">
+                        <select name="state">
                             <option value="VIC" required="required">VIC</option>
                             <option value="NSW">NSW</option>
                             <option value="QLD">QLD</option>
@@ -93,30 +96,30 @@
                             <option value="TAS">TAS</option>
                             <option value="ACT">ACT</option>
                         </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;<label class="applyInput" ><input type="text" placeholder="Enter your postcode" pattern="[0-9]{4}" required="required"/>Postcode</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<label class="applyInput"><input type="text" name="postcode" placeholder="Enter your postcode" pattern="[0-9]{4}" required="required"/>Postcode</label>
                     </p>
-                    
+                   
                 </fieldset><hr/>
                 <fieldset class="contactInfo">
                  <h3 class="applyH3">Contact Information</h3>
                     <p>
-                        <label class="applyInput"><input type="text" name="Email" placeholder="123456@gmail.com" required="required"/>Email Address</label>
+                        <label class="applyInput"><input type="text" name="emailAddress" placeholder="123456@gmail.com" required="required"/>Email Address</label>
                     </p>
                     <p>
-                        <label class="applyInput"><input type="text" name="Phone" pattern="[ 0-9]{8-12}" placeholder="0123456789" required="required"/>Phone Number</label>
+                        <label class="applyInput"><input type="text" name="phoneNumber" pattern="[ 0-9]{8-12}" placeholder="0123456789" required="required"/>Phone Number</label>
                     </p>
                 </fieldset><hr/>
                 <fieldset class="skills">
                 <h3 class="applyH3">Skills</h3>
                     <p>
-                        <label id="checkInput" class="applyInput"><input type="checkbox" name="skills[]" value="Bachelor in IT" required="required" checked/>Bachelor Degree in IT Field</label><hr/>
-                        <label id="checkInput"  class="applyInput"><input type="checkbox" name="skills[]" value="Familar with networking protocols"/>Familiar with networking protocols</label><hr/>
-                        <label id="checkInput"  class="applyInput"><input type="checkbox" name="skills[]" value="Certification in IT or programming"/> Certification in IT or programming</label><hr/>
-                        <label id="checkInput"  class="applyInput"><input type="checkbox" name="skills[]" value="Fluency in English"/> Fluency in English</label><hr/>
+                        <label id="checkInput" class="applyInput"><input type="checkbox" name="Bachelor" value="Bachelor in IT" required="required" checked/>Bachelor Degree in IT Field</label><hr/>
+                        <label id="checkInput"  class="applyInput"><input type="checkbox" name="Network" value="Familar with networking protocols"/>Familiar with networking protocols</label><hr/>
+                        <label id="checkInput"  class="applyInput"><input type="checkbox" name="IT" value="Certification in IT or programming"/> Certification in IT or programming</label><hr/>
+                        <label id="checkInput"  class="applyInput"><input type="checkbox" name="English" value="Fluency in English"/> Fluency in English</label><hr/>
                     </p>
                     <p>
                         <label class="applyInput">Other Skills</label>
-                        <textarea class="applyInput" name="Other Skills" placeholder="Write your other skills here"></textarea>
+                        <textarea class="applyInput" name="otherSkills" placeholder="Write your other skills here"></textarea>
                     </p>
                 </fieldset><hr/>
                     <div class="FinalApply">
@@ -129,9 +132,12 @@
                     </div>
                     </p>
                     </div>
-            </fieldset>        
+            </fieldset>       
         </form>
     </section>
+    <?php
+        require_once 'processEOI.php';
+    ?>
 </body>
 </html>
 
