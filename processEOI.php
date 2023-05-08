@@ -211,16 +211,17 @@ function sanitise_input ($data){
 if($error == '') {
     $sql_insert = "INSERT INTO eoi (JobReferenceNumber, FirstName, LastName, DateOfBirth, Gender, StreetAddress, SuburbTown, State, Postcode, EmailAddress, PhoneNumber, Skills, OtherSkills, Status)
     VALUES ('$jobReferenceNumber', '$firstName', '$lastName', '$dateOfBirth', '$gender', '$streetAddress', '$suburbTown', '$state', '$postcode', '$emailAddress', '$phoneNumber', '$skills', '$otherSkills', 'New')";
+    if (mysqli_query($conn, $sql_insert)) {
+        echo "EOI record created successfully.";
+    } else {
+        echo "Submission Failed: " . mysqli_error($conn);
+    }
+    }
 } else {
     echo "There's an error!";
 }
 
-if (mysqli_query($conn, $sql_insert)) {
-    echo "EOI record created successfully.";
-} else {
-    echo "Submission Failed: " . mysqli_error($conn);
-}
-}
+
 
 // Close the connection
 mysqli_close($conn);
