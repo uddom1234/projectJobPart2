@@ -9,9 +9,8 @@
 </head>
 <body>
 	<?php 
-        require 'header.php' ;
+        require 'header.inc' ;
     ?>
-    </nav>
     <section id="enhancementMainSection">
         <div id="enhancementBackground">
             <div class="enchancementMainCard mainCardPreview">
