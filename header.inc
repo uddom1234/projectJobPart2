@@ -1,7 +1,9 @@
+<link href="style.css" rel="stylesheet" media="screen"/>
+
 
     <nav>
         <div class="leftNav navBlock">
-            <a href="./index.html">
+            <a href="./index.php">
                 <image src="./images/logo-black.png" id="logo"></image>
             </a>
             <ul class="navHead">
@@ -20,7 +22,7 @@
             </ul>
             </div>
         <div class="rightNav navBlock">
-            <a href="./apply.html" class="fakeBtn">
+            <a href="./apply.php" class="fakeBtn">
                 APPLY NOW
             </a>
         </div>
