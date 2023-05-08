@@ -9,8 +9,8 @@
     <link rel="icon" type="image/x-icon" href="/images/logo.png">
 </head>
 <body>
-<?php 
-        require 'header.php' ;
+    <?php 
+        require 'header.inc' ;
     ?>
     <div class="mainCardBody">
         <div class="mainCardSplit">
