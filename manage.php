@@ -86,42 +86,43 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <title>EOI Management</title>
+    <link href="manage.css" rel="stylesheet"  media="screen"/>
 </head>
 <body>
-    <h1>EOI Management</h1>
-    <form action="manage.php" method="post">
+    <h1 class='pageTitle'>EOI Management</h1>
+    <form action="manage.php" method="post" class='container'>
         <input type="hidden" name="action" value="listAll">
-        <input type="submit" value="List all EOIs">
+        <input type="submit" value="List all EOIs" class='formButton'>
     </form>
     <br>
 
-    <form action="manage.php" method="post">
+    <form action="manage.php" method="post" class='container'>
         <input type="hidden" name="action" value="listByJobRef">
         <label for="jobReferenceNumber">Job Reference Number:</label>
         <input type="text" name="jobReferenceNumber" id="jobReferenceNumber">
-        <input type="submit" value="List EOIs by Job Reference Number">
+        <input type="submit" value="List EOIs by Job Reference Number" class='formButton'>
     </form>
     <br>
 
-    <form action="manage.php" method="post">
+    <form action="manage.php" method="post" class='container'>
         <input type="hidden" name="action" value="listByApplicant">
         <label for="firstName">First Name:</label>
         <input type="text" name="firstName" id="firstName">
         <label for="lastName">Last Name:</label>
         <input type="text" name="lastName" id="lastName">
-        <input type="submit" value="List EOIs by Applicant Name">
+        <input type="submit" value="List EOIs by Applicant Name" class='formButton'>
     </form>
     <br>
 
-    <form action="manage.php" method="post">
+    <form action="manage.php" method="post" class='container'>
         <input type="hidden" name="action" value="deleteByJobRef">
         <label for="jobReferenceNumber">Job Reference Number:</label>
         <input type="text" name="jobReferenceNumber" id="jobReferenceNumber">
-        <input type="submit" value="Delete EOIs by Job Reference Number">
+        <input type="submit" value="Delete EOIs by Job Reference Number" class='formButton'>
     </form>
     <br>
 
-    <form action="manage.php" method="post">
+    <form action="manage.php" method="post" class='container'>
         <input type="hidden" name="action" value="changeStatus">
         <label for="EOInumber">EOI Number:</label>
         <input type="text" name="EOInumber" id="EOInumber">
@@ -131,10 +132,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <option value="Current">Current</option>
             <option value="Final">Final</option>
         </select>
-        <input type="submit" value="Change EOI Status">
+        <input type="submit" value="Change EOI Status" class='formButton'>
     </form>
-    <form action="logout.php" method="post" style="display: inline;">
-        <input type="submit" value="Logout">
+    <form action="logout.php" method="post" style="display: inline;" class='container'>
+        <input type="submit" value="Logout" class='formButton'>
     </form>
 
 </body>

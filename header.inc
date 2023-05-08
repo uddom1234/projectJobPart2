@@ -1,4 +1,3 @@
-
     <nav>
         <div class="leftNav navBlock">
             <a href="./index.html">
