@@ -20,16 +20,16 @@
             </a>
             <ul class="navHead">
                 <li>
-                    <a href="./jobs.html">Job</a>
+                    <a href="./jobs.php">Job</a>
                 </li>
                 <li>
                     <a href="./apply.php">Apply</a>
                 </li>
                 <li>
-                    <a href="./about.html">About</a>
+                    <a href="./about.php">About</a>
                 </li>
                 <li>
-                    <a href="./enhancement.html">Enhancement</a>
+                    <a href="./enhancement.php">Enhancement</a>
                 </li>
             </ul>
             </div>
