@@ -176,6 +176,46 @@ $age = $diff->y;
 if ($age<18){
     $error.= "<p> Age requirement does not match</p>";
 }
+if($state=='VIC'){
+    if($postcode<3000 || $postcode>3999  && $postcode<8000 || $postcode>8999){
+    $error.= "<p> Postcode does not match with state</p>";
+    }
+}
+if($state=='NSW'){
+    if($postcode<2000 || $postcode>2599 && $postcode<2619 || $postcode>2899 && $postcode<2921 || $postcode>2999  && $postcode<1000 || $postcode>1999){
+    $error.= "<p> Postcode does not match with state</p>";
+    }
+}
+if($state=='ACT'){
+    if($postcode<2600 || $postcode>2618 && $postcode<2900 || $postcode>2920  &&  $postcode<0200 || $postcode>0299){
+    $error.= "<p> Postcode does not match with state</p>";
+    }
+}
+if($state=='QLD'){
+    if($postcode<4000 || $postcode>4999 && $postcode<9000|| $postcode>9999){
+    $error.= "<p> Postcode does not match with state</p>";
+    }
+}
+if($state=='SA'){
+    if($postcode<5000 || $postcode>5799 && $postcode<5800|| $postcode>5999){
+    $error.= "<p> Postcode does not match with state</p>";
+    }
+}
+if($state=='WA'){
+    if($postcode<6000 || $postcode>6797 && $postcode<6800|| $postcode>6999){
+    $error.= "<p> Postcode does not match with state</p>";
+    }
+}
+if($state=='TAS'){
+    if($postcode<7000 || $postcode>7799 && $postcode<7800|| $postcode>7999){
+    $error.= "<p> Postcode does not match with state</p>";
+    }
+}
+if($state=='NT'){
+    if($postcode<0800 || $postcode>0899 && $postcode<0900|| $postcode>0999){
+    $error.= "<p> Postcode does not match with state</p>";
+    }
+}
 if ($error !=""){
     echo "<p> $error </p>";
 } 
@@ -217,8 +257,7 @@ if($error == '') {
         echo "Submission Failed: " . mysqli_error($conn);
     }
     }
-} else {
-    echo "There's an error!";
+ 
 }
 
 
