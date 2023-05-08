@@ -11,9 +11,8 @@
     <link rel="icon" type="image/x-icon" href="/images/logo.png">
 </head>
 <body>
-
 	<?php 
-        require 'header.php' ;
+        require 'header.inc' ;
     ?>
     </nav>
 	</div>
