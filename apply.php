@@ -7,11 +7,10 @@
     <title>Apply</title>
     <link href="style.css" rel="stylesheet" media="screen"/>
 </head>
-
+<body>
     <?php 
-        require 'header.php' ;
+        require 'header.inc' ;
     ?>
-
     <section class= "formCard" >
         <form method="post" action="processEOI.php" novalidate=”novalidate”>
             <fieldset class="mainForm">
