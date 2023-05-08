@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="/images/logo.png">
 </head>
 <body>
-<?php 
+    <?php 
         require 'header.php' ;
     ?>
     <div class="mainCardBody">
