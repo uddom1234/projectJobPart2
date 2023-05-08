@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php 
-        require 'header.php' ;
+        require 'header.inc' ;
     ?>
     <div class="mainCardBody">
         <div class="mainCardSplit">
