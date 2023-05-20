@@ -31,7 +31,7 @@ body {
   
   .input {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 10 px;
   }
   
   .button {
@@ -53,4 +53,24 @@ body {
     translate: scale(1.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
-  
+  .table:hover{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3) ;
+    translate: scale(1.1);
+  }
+  .table {
+    background-color:rgba(96, 153, 102, 0.8);
+  }
+  th {
+    background-color: white;
+  }
+  input:hover{
+    box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.3);
+
+  }
+
+  .pageTitle {
+    color: blue;
+  }
+  .formButton{
+    background-color: #4CAF50;
+  }

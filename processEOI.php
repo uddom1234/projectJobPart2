@@ -173,7 +173,7 @@ if($skills==''){
 $today= new DateTime();
 $diff = $today->diff(new DateTime($dateOfBirth));
 $age = $diff->y;
-if ($age<18){
+if ($age<15 || $age>80){
     $error.= "<p> Age requirement does not match</p>";
 }
 if($state=='VIC'){
