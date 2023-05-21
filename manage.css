@@ -5,6 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
+    font-family: monospace;
   }
   
   /* Form Container */
@@ -68,9 +69,32 @@ body {
 
   }
 
-  .pageTitle {
-    color: blue;
-  }
   .formButton{
+    display: block;
+    width: 100%;
+    padding: 10px;
     background-color: #4CAF50;
+    color: white;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
   }
+  .formButton:hover {
+    transform: translate(0, -5%);
+  }
+
+  .manageForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    padding: 20px;
+    border: 1px solid black;
+    transition: all 0.3s ease-in-out;
+    }
+
+    .pageTitle {
+      color: black;
+      text-shadow: 2px 2px 2px rgba(114, 113, 113, 0.5);
+    }
