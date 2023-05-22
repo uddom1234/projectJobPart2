@@ -31,8 +31,10 @@ if (mysqli_query($conn, $sql_create_table) === FALSE) {
 
 //need to add validation
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-date_default_timezone_set("Australia/Melbourne");
+    //displaying the data and time when the form is submitted
+date_default_timezone_set("Australia/Melbourne");  
 echo "<p> Submitted on " . date("d-m-y"). " at " .date("h:i:sa"). ".</p>";
+//checking if the variable is set.
 if (isset($_POST["jobReferenceNumber"])){
     $jobReferenceNumber=$_POST["jobReferenceNumber"];
 }
@@ -113,7 +115,7 @@ if (isset($_POST["Bachelor"])) $skills=$skills."Bachelor in IT";
 if (isset($_POST["Network"])) $skills=$skills."Familiar with networking protocol";
 if (isset($_POST["IT"])) $skills=$skills."Certification in IT or programming";
 if (isset($_POST["English"])) $skills=$skills."Fluency in English";
-
+//adding error messages in the error array.
 $error='';
 if ($jobReferenceNumber==''){
 $error.="<p>Enter Job reference number in the <a href=\"apply.php\">form</a>.</p>";
@@ -170,12 +172,14 @@ if($state==''){
 if($skills==''){
     $error.="<p> Please select your skill in the <a href=\"apply.php\">form</a>.</p>";
 }
+// calculating the age of the applicant
 $today= new DateTime();
 $diff = $today->diff(new DateTime($dateOfBirth));
 $age = $diff->y;
 if ($age<15 || $age>80){
     $error.= "<p> Age requirement does not match</p>";
 }
+//matching postcode with the state provided
 if($state=='VIC'){
     if($postcode<3000 || $postcode>3999  && $postcode<8000 || $postcode>8999){
     $error.= "<p> Postcode does not match with state</p>";
@@ -220,7 +224,7 @@ if ($error !=""){
     echo "<p> $error </p>";
 } 
 
-
+//sanitising each input
 function sanitise_input ($data){
     $data=trim($data);
     $data=stripslashes($data);
