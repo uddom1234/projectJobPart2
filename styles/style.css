@@ -886,7 +886,7 @@ th:hover{
   box-shadow: 2px 2px 2px #2D2727 ;
 }
 
-footerMenu {
+.footerMenu {
   color: grey ;
   font-size: small;
   align-items: end;
