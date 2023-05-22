@@ -1,5 +1,4 @@
 <?php
-    // Replace the placeholders with your database credentials
     $servername = "feenix-mariadb.swin.edu.au";
     $username = "s104053930";
     $password = "030303";

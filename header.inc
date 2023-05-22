@@ -19,6 +19,12 @@
                 <li>
                     <a href="./enhancement.php">Enhancement</a>
                 </li>
+                <li>
+                    <a href="./enhancementphp.php">Enhancement PHP</a>
+                </li>
+                <li>
+                    <a href="./manage.php">Manage</a>
+                </li>
             </ul>
             </div>
         <div class="rightNav navBlock">
