@@ -99,7 +99,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
     <br>
 </div>
-
 <div>
     <form action="manage.php" method="post" class='container'>
         <input type="hidden" name="action" value="listByJobRef">
