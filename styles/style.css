@@ -889,4 +889,5 @@ th:hover{
 footerMenu {
   color: grey ;
   font-size: small;
+  align-items: end;
 }
