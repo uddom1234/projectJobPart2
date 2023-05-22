@@ -13,8 +13,8 @@ require_once 'settings.php';
 
 // Function to display query results
 function display($result) {
-    echo "<table border='1'>";
-    echo "<tr>
+    echo "<table border='1' class=\"table\">";
+    echo "<tr class=\"table\" >
             <th>EOInumber</th>
             <th>JobReferenceNumber</th>
             <th>FirstName</th>
@@ -86,15 +86,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <title>EOI Management</title>
+    <link rel="stylesheet" href="styles/manage.css">
 </head>
 <body>
     <h1 class='pageTitle'>EOI Management</h1>
+<div class='manageForm'>
+<div>
     <form action="manage.php" method="post" class='container'>
+        
         <input type="hidden" name="action" value="listAll">
         <input type="submit" value="List all EOIs" class='formButton'>
     </form>
     <br>
+</div>
 
+<div>
     <form action="manage.php" method="post" class='container'>
         <input type="hidden" name="action" value="listByJobRef">
         <label for="jobReferenceNumber">Job Reference Number:</label>
@@ -102,7 +108,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="submit" value="List EOIs by Job Reference Number" class='formButton'>
     </form>
     <br>
+</div>
 
+<div>
     <form action="manage.php" method="post" class='container'>
         <input type="hidden" name="action" value="listByApplicant">
         <label for="firstName">First Name:</label>
@@ -112,7 +120,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="submit" value="List EOIs by Applicant Name" class='formButton'>
     </form>
     <br>
-
+</div>
+<div>
     <form action="manage.php" method="post" class='container'>
         <input type="hidden" name="action" value="deleteByJobRef">
         <label for="jobReferenceNumber">Job Reference Number:</label>
@@ -120,7 +129,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="submit" value="Delete EOIs by Job Reference Number" class='formButton'>
     </form>
     <br>
-
+</div>
+<div>
     <form action="manage.php" method="post" class='container'>
         <input type="hidden" name="action" value="changeStatus">
         <label for="EOInumber">EOI Number:</label>
@@ -133,8 +143,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </select>
         <input type="submit" value="Change EOI Status" class='formButton'>
     </form>
+</div>
+</div>
     <form action="logout.php" method="post" style="display: inline;" class='container'>
-        <input type="submit" value="Logout" class='formButton'>
+        <input type="submit" class="logout" value="Logout" class='formButton'>
     </form>
 
 </body>
