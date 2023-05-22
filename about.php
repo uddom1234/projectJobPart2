@@ -177,5 +177,8 @@
   <li> Address: John St, Hawthorn VIC 3122</li>
 
 </ul>
+<?php 
+        require 'footer.inc' ;
+    ?>
     </body>
 </html>

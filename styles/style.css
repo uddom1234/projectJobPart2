@@ -884,3 +884,8 @@ th:hover{
   color: white;
   box-shadow: 2px 2px 2px #2D2727 ;
 }
+
+footerMenu {
+  color: grey ;
+  font-size: small;
+}

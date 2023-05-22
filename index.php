@@ -73,6 +73,9 @@
             </a>
         </div>
     </footer>
+    <?php 
+        require 'footer.inc' ;
+    ?>
     
 </body>
 </html>

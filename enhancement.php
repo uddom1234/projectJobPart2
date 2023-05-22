@@ -45,5 +45,8 @@
             </div>
         </div>
     </section>
+    <?php 
+        require 'footer.inc' ;
+    ?>
 </body>
 </html>

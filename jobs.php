@@ -100,6 +100,9 @@
 				</div>
 			</div>
 		</div>
+		<?php 
+        require 'footer.inc' ;
+    ?>
 </body>
 </html>
 

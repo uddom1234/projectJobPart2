@@ -1,4 +1,4 @@
-<link href="style.css" rel="stylesheet" media="screen"/>
+<link href="styles/style.css" rel="stylesheet" media="screen"/>
 
 
     <nav>

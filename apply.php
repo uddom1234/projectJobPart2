@@ -113,6 +113,9 @@
     <?php
         require_once 'processEOI.php';
     ?>
+    <?php 
+        require 'footerMenu.inc' ;
+    ?>
 </body>
 </html>
 
