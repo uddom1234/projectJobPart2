@@ -15,7 +15,7 @@
         <div id="enhancementBackground">
             <div class="enchancementMainCard mainCardPreview">
                 <ul>
-                    <li class="en_responsive">
+                    <li class="en_hovering">
                         <a href="./login.php" class="en_hover_hide">Login & Logout
                         <p>Admin credentials are stored in database</p>
                         <p>When you login, the username will be sent to the database to see if the user exists, if it does, then we compare the passwords to see if it matches. </p>
