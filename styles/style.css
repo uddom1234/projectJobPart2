@@ -878,6 +878,7 @@ th {
   background-color: #68a66d;
   box-shadow: 1px 1px 1px rgb(108, 107, 107) inset;
   transform: scale(1.1);
+  width:max-content;
 }
 th:hover{
   transition: transform 0.5s ease;
