@@ -890,4 +890,5 @@ th:hover{
   color: grey ;
   font-size: small;
   align-items: end;
+  display: flex
 }
