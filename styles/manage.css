@@ -40,7 +40,6 @@ body {
 
 /* Manage.php */
 
-
 .button {
   display: block;
   width: 100%;
@@ -105,6 +104,6 @@ input:hover{
 
 
   .pageTitle {
-    color: black;
+    color: orange;
     text-shadow: 2px 2px 2px rgba(114, 113, 113, 0.5);
   }

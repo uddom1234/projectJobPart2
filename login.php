@@ -56,7 +56,6 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="./manage.css">
     <link rel="stylesheet" href="styles/manage.css">
 </head>
 <body>
