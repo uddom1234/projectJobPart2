@@ -86,6 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <title>EOI Management</title>
+    <link rel="stylesheet" href="./manage.css">
     <link rel="stylesheet" href="styles/manage.css">
 </head>
 <body>
