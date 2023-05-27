@@ -111,10 +111,8 @@
         </form>
     </section>
     <?php
-        require_once 'processEOI.php';
-    ?>
-    <?php 
-        require 'footerMenu.inc' ;
+        require_once 'processEOI.php'; 
+        require 'footer.inc' ;
     ?>
 </body>
 </html>
